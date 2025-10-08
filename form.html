@@ -29,16 +29,55 @@
       }
 
       .login-card {
-        padding: 10px;
+        padding: 20px;
+        min-width: 200px;
         display: flex;
         flex-direction: column;
         gap: 15px;
         border: 1px solid #000000;
-        border-radius: 10px;
+        border-radius: 25px;
       }
       .title {
         margin: auto;
         font-size: 1.54rem;
+      }
+      .forget_password {
+        margin-top: 5px;
+        text-align: right;
+        font-size: 0.7rem;
+      }
+      .no-login {
+        margin-bottom: 15px;
+        text-align: center;
+      }
+      .submit-login {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      a {
+        color: rgb(34, 141, 184);
+      }
+      label {
+        font-weight: bold;
+      }
+      input {
+        height: 1.5rem;
+        width: 100%;
+        border: 1px solid gray;
+        border-radius: 3px;
+        &[type="submit"],
+        &[type="button"] {
+          height: 3em;
+          border-color: lightblue;
+          border-radius: 5px;
+          font-weight: bold;
+          color: rgb(34, 141, 184);
+        }
+        &[type="submit"] {
+          background-color: rgb(34, 141, 184);
+          color: white;
+        }
       }
     </style>
   </head>
@@ -62,13 +101,13 @@
       </div>
       <div class="submit-login">
         <div>
-          <input type="submit" value="ログインする" />
+          <input class="btn-login" type="submit" value="ログインする" />
         </div>
         <div>
-          <input type="button" value="新規登録" />
+          <input class="btn-register" type="button" value="新規登録" />
         </div>
       </div>
-      <div>
+      <div class="no-login">
         <a href="/no-login">ログインせずに使用する</a>
       </div>
     </form>
