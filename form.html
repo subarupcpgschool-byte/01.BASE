@@ -34,7 +34,7 @@
         display: flex;
         flex-direction: column;
         gap: 15px;
-        border: 1px solid #000000;
+        border: 1px solid rgb(65, 126, 150);
         border-radius: 25px;
       }
       .title {
@@ -73,6 +73,7 @@
           border-radius: 5px;
           font-weight: bold;
           color: rgb(34, 141, 184);
+          margin-bottom: 10px;
         }
         &[type="submit"] {
           background-color: rgb(34, 141, 184);
@@ -83,6 +84,9 @@
   </head>
   <body>
     <form action="/confirm" method="get" class="login-card">
+      <input name="login_id" type="text" />
+      <input name="password" type="password" />
+      <input type="submit" value="ログイン" />
       <div class="title">ログイン</div>
       <div class="form-example">
         <div>
