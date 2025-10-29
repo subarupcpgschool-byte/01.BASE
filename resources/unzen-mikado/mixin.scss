@@ -1,0 +1,106 @@
+@use "setting" as *;
+
+@mixin fz($font-size, $line-height: 0, $letter-spacing: 0, $font-weight: 0) {
+    //  font-size
+    // font-size: ($font-size) + px;
+    font-size: ($font-size / 10) + rem;
+    //  line-height
+    @if ($line-height!=0) {
+        line-height: ($line-height / $font-size);
+    }
+    // letter-spacing
+    @if ($letter-spacing!=0) {
+        letter-spacing: ($letter-spacing / 1000) * 1em;
+    }
+    // font-weight
+    @if ($font-weight!=0) {
+        font-weight: ($font-weight);
+    }
+}
+
+//レスポンシブ
+$breakpoints: (
+    "s": "screen and (max-width: 575px)",
+    "sp": "screen and (max-width: 767px)",
+    "side": "screen and (max-width: 1080px)",
+    "l": "screen and (max-width: 1100px)",
+    "de": "screen and (max-width: 1440px)",
+    "pc": "print, screen and (min-width: 768px)"
+) !default;
+
+@mixin mq($breakpoint) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+
+$sp-design-width: 800;
+@function calcvw($num, $width: $sp-design-width) {
+    @return calc(1vw * $num / $width * 100);
+}
+
+//clearfix
+@mixin clearfix {
+    &::after {
+        content: "";
+        display: block;
+        height: 0;
+        font-size: 0;
+        clear: both;
+        visibility: hidden;
+    }
+}
+
+//中央寄せ
+@mixin center {
+    margin-left: auto;
+    margin-right: auto;
+}
+@mixin position_center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+}
+@mixin translate {
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+}
+@mixin translatex {
+    left: 50%;
+    translate: -50% 0;
+}
+@mixin translatey {
+    top: 50%;
+    translate: 0 -50%;
+}
+
+//hover
+@mixin hover {
+    @include mq(pc) {
+        transition: opacity $transition;
+        cursor: pointer;
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+}
+
+//ダイアルリンク
+@mixin tel-link {
+    @include mq(pc) {
+        pointer-events: none;
+    }
+}
+
+@mixin max-center($max, $mt: 0) {
+    max-width: $max;
+    margin: $mt auto 0;
+}
+
+@mixin yurayura {
+    &.is-anime {
+        animation: yurayura 3s infinite;
+    }
+}

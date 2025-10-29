@@ -1,0 +1,159 @@
+@charset "UTF-8";
+/* ---------------------------------------
+  基本情報
+-----------------------------------------*/
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-y: scroll;
+}
+
+body {
+  margin: 0 auto;
+  color: #000;
+  font-family: "Kaisei Opti", serif;
+  font-weight: normal;
+  background-color: #e7e3d2;
+}
+body.is-fixed {
+  width: 100%;
+  position: fixed;
+}
+
+@media print, screen and (min-width: 768px) {
+  body,
+  .l-header,
+  .l-header__fixed,
+  .l-hamburger,
+  .l-container {
+    min-width: 1200px;
+  }
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+address,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+table,
+th,
+td,
+img,
+form {
+  border: none;
+  line-height: 1;
+  list-style-type: none;
+  word-break: break-word;
+}
+
+input,
+button,
+textarea,
+select {
+  background: none;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-family: "Kaisei Opti", serif;
+  color: #000;
+  font-weight: normal;
+}
+
+textarea {
+  resize: vertical;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+}
+
+img {
+  vertical-align: bottom;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+
+/* responsive
+--------------------------------*/
+@media print, screen and (min-width: 768px) {
+  .sp {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 767px) {
+  .pc {
+    display: none !important;
+  }
+}
+.aligncenter {
+  display: block;
+  margin: 0 auto;
+}
+
+.alignright {
+  float: right;
+}
+
+.alignleft {
+  float: left;
+}
+
+.tac {
+  text-align: center;
+}
+
+.tar {
+  text-align: right;
+}
+
+.tal {
+  text-align: left;
+}
+
+@media print, screen and (min-width: 768px) {
+  .tel-link {
+    pointer-events: none;
+  }
+}
+
+.dib {
+  display: inline-block;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}/*# sourceMappingURL=base.css.map */

@@ -1,0 +1,143 @@
+@use "setting" as *;
+@use "mixin" as *;
+/* ---------------------------------------
+  基本情報
+-----------------------------------------*/
+
+*,
+*:after,
+*:before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html,
+body {
+	height: 100%;
+}
+html {
+	font-size: 62.5%;
+	overflow-y: scroll;
+}
+body {
+	margin: 0 auto;
+	color: $text_01;
+	font-family: $font01;
+	font-weight: normal;
+	background-color: $color_02;
+	&.is-fixed {
+		width: 100%;
+		position: fixed;
+	}
+}
+body,
+.l-header,
+.l-header__fixed,
+.l-hamburger,
+.l-container {
+	@include mq(pc) {
+		min-width: $pc-min-size;
+	}
+}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+address,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+table,
+th,
+td,
+img,
+form {
+	border: none;
+	line-height: 1;
+	list-style-type: none;
+	word-break: break-word;
+}
+input,
+button,
+textarea,
+select {
+	background: none;
+	border: none;
+	border-radius: 0;
+	outline: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	font-family: $font01;
+	color: $text_01;
+	font-weight: normal;
+}
+textarea {
+	resize: vertical;
+}
+select::-ms-expand {
+	display: none;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+	outline: none;
+}
+img {
+	vertical-align: bottom;
+	max-width: 100%;
+	width: 100%;
+	height: auto;
+}
+/* responsive
+--------------------------------*/
+@include mq(pc) {
+	.sp {
+		display: none !important;
+	}
+}
+@include mq(sp) {
+	.pc {
+		display: none !important;
+	}
+}
+
+.aligncenter {
+	display: block;
+	margin: 0 auto;
+}
+.alignright {
+	float: right;
+}
+.alignleft {
+	float: left;
+}
+.tac {
+	text-align: center;
+}
+.tar {
+	text-align: right;
+}
+.tal {
+	text-align: left;
+}
+.tel-link {
+	@include tel-link;
+}
+.dib {
+	display: inline-block;
+}
+
+.clearfix::after {
+	content: "";
+	display: block;
+	clear: both;
+}
